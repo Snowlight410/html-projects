@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      body {
+        margin: 0;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+        padding: 0;
+      }
+
+      #incease_number {
+        position: relative;
+        background-color: blue;
+        border-radius: 50px;
+        text-align: center;
+        color: white;
+        top: 22px;
+        left: 4px;
+      }
+      #btn {
+        position: relative;
+        top: 20px;
+        left: 10px;
+        background-color: rgb(249, 255, 255);
+        color: rgb(0, 0, 0);
+      }
+      #btn2 {
+        position: relative;
+        top: 20px;
+        left: 10px;
+        background-color: rgb(249, 255, 255);
+        color: rgb(0, 0, 0);
+      }
+    </style>
+    <title>Push notification</title>
+  </head>
+  <body>
+    <div id="Push_notifi">
+      <p id="incease_number">0</p>
+      <i id="push" class="fa-solid fa-message"></i>
+    </div>
+    <button id="btn" type="submit">Submit</button>
+    <button id="btn2" type="submit">Defual</button>
+    <script>
+      let incease_number = document.getElementById("incease_number");
+      let btn = document.getElementById("btn");
+      let btn2 = document.getElementById("btn2");
+      let incease_num = 0;
+      btn.addEventListener("click", () => {
+        incease_num = incease_num + 1;
+        incease_number.innerHTML = incease_num;
+      });
+      btn2.addEventListener("click", () => {
+        incease_num=0
+         incease_number.innerHTML = 0
+      });
+    
+    </script>
+  </body>
+</html>

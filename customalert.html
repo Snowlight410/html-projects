@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.alert {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.message {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.close-btn:hover {
+  background-color: #666;
+}
+.hover-btn {
+  background-color: #008CBA;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.hover-btn:hover {
+  background-color: #005F6B;
+}
+
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <div class="alert">
+          <p class="message">You Want to delete you account</p>
+          <button class="close-btn">Close</button>
+          <button class="close-btn delete-btn">Permanent Delete</button>
+        </div>
+      </div>
+      <button id="alert-btn" class="hover-btn">delete Account</button>
+      <script>
+        const alertBtn = document.getElementById('alert-btn');
+        const deleteBtn = document.querySelector('.delete-btn');
+const overlay = document.querySelector('.overlay');
+const closeBtn = document.querySelector('.close-btn');
+
+alertBtn.addEventListener('click', function() {
+    if(alertBtn.innerHTML ==='You account is deleted')
+    {
+        overlay.style.display='none'
+    }
+    else{
+        overlay.style.display = 'flex';
+    }
+});
+
+deleteBtn.addEventListener('click', function() {
+  overlay.style.display = 'none'
+  alertBtn.innerHTML='You account is deleted'
+  setInterval(() => {
+   alertBtn.innerHTML=`
+   <a href='/form.html' style='text-decoration:none; color:white;'>Create a new account</a>` 
+  }, 1000);
+});
+
+closeBtn.addEventListener('click', function() {
+  overlay.style.display = 'none'
+});
+      </script>
+</body>
+</html>

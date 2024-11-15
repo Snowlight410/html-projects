@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      nav {
+        background-color: black;
+        display: flex;
+        padding: 10px;
+        align-items: center;
+        justify-content: space-between;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+      }
+      nav ul {
+        display: flex;
+      }
+      nav ul li,
+      nav ul a {
+        list-style: none;
+        color: white;
+        text-decoration: none;
+      }
+      nav a,
+      nav button {
+        margin: auto 20px;
+      }
+      .hide {
+        display: block;
+        background-color: blue;
+        position: absolute;
+        right: 0px;
+        top: 39px;
+        transition: top 1s ease-in-out;
+        height: 40vh;
+        width: 100px;
+      }
+
+      nav button {
+        display: none;
+      }
+      @media screen and (max-width: 600px) {
+        nav ul {
+          display: none;
+        }
+        nav button {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="">Navbar</a>
+      <ul >
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Service</a></li>
+      </ul>
+      <button class="btn">Hide Are show</button>
+    </nav>
+    <script>
+      const btn = document.querySelector(".btn");
+      const ul = document.querySelector("ul");
+      btn.addEventListener("click", () => {
+        ul.classList.toggle("hide");
+      });
+    </script>
+  </body>
+</html>
